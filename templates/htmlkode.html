@@ -47,11 +47,8 @@
   <option value="6">6</option>
 </select>
  <br>
- Calories:<br>
- <input type="text" name="calories" value="">
- <br>
  Total:<br>
- <input type="text" name="total" value=""><br>
+ <input type="text" name="" value="" id="total"><br>
  <br>
 
 <button type="button" onclick="alert('Hello')">Insert Order</button>
@@ -129,9 +126,8 @@ tr:nth-child(even) {
 function additions(checkbox, additions) {
  var up = document.getElementById("Price").value;
  up = checkbox.checked ? parseFloat(up) + parseFloat(additions) : parseFloat(up) - parseFloat(additions);
-
-document.getElementById("Price").value = up
-
+document.getElementById("Price").value = up;
+calcTotal()
 }
 function calcTotal() {
    var up = document.getElementById("Price");
@@ -139,29 +135,25 @@ function calcTotal() {
    var t = up.value * un.value;
    document.getElementById("total").value = t;
 }
-calcTotal()
+calcTotal();
 function ChangePicture() {
 
    if (document.querySelector('input[name="radio1"]:checked').value === "Ma") {
        document.getElementById("pizzaPicture").src = "http://www.sugardale.com/sites/default/files/stuffed%20crust%20pizza.jpg";
        document.getElementById("Price").value = "5";
-       document.getElementById("Calories").value = "350";
        calcTotal()
    } else if (document.querySelector('input[name="radio1"]:checked').value === "Mp") {
        document.getElementById("pizzaPicture").src = "https://www.papajohns.com/static-assets/a/images/web/product/pizzas/sausage-slate-compressed.jpg";
        document.getElementById("Price").value = "7";
-       document.getElementById("Calories").value = "765";
        calcTotal()
    } else if (document.querySelector('input[name="radio1"]:checked').value === "Sic") {
        document.getElementById("pizzaPicture").src = "https://www.papajohns.com/static-assets/a/images/web/product/garlic-parm-crust/garlic-parm-sausage-compressed.jpg"
        document.getElementById("Price").value = "11";
-       document.getElementById("Calories").value = "250";
        calcTotal()
 
    } else if (document.querySelector('input[name="radio1"]:checked').value === "Nap") {
        document.getElementById("pizzaPicture").src = "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ1KqZEBJ3GBv_dhrapZgiQ0hdzL-_KNIhXJZXXzGJyMPpxN6Lc";
        document.getElementById("Price").value = "4";
-       document.getElementById("Calories").value = "475";
        calcTotal()
 
 }}
