@@ -11,31 +11,41 @@
 <label>Address</label><br>
 <input type = "address"/><br>
 <br>
+<img src="https://storage.googleapis.com/lcbc-assets/images/IChoose__1600x900-SeriesHero.jpg?mtime=20180928111132" id="pizzaPicture" width=300>
 
-<h2>Pizza Type</h2>
-<form action="" method="">
-    <input type="radio" name="pizza" value="Option"> Marine Pizza <br>
-    <input type="radio" name="pizza" value="Option"> Mixed Pizza <br>
-    <input type="radio" name="pizza" value="Option"> Sicilian <br>
-    <input type="radio" name="pizza" value="Option"> Napoliten <br>
-</form><br>
-<br>
+
+<form>
+<input type="radio" name="radio1" onClick="ChangePicture();" value="Ma">Marine
+<input type="radio" name="radio1" onClick="ChangePicture();" value="Mp">Mixed
+<input type="radio" name="radio1" onClick="ChangePicture();" value="Sic">Sicilian
+<input type="radio" name="radio1" onClick="ChangePicture();" value="Nap">Napoliten
+</form>
+
+
+
     <h2>Additions</h2>
-<form action="" method="">
-    <input type="checkbox" name="topping" value="Option"> Green Pepper <br>
-    <input type="checkbox" name="topping" value="Option"> Mushroom <br>
-    <input type="checkbox" name="topping" value="Option"> Tomato <br>
-    <input type="checkbox" name="topping" value="Option"> Pickles <br>
-    <input type="checkbox" name="topping" value="Option"> Olives <br>
+<form action="" method="get" id = "additions">
+    <input class="toppings" type="checkbox" name="topping" onchange="additions(this, '.25')" value="GP"> Green Pepper <br>
+    <input class="toppings" type="checkbox" name="topping" onchange="additions(this, '.25')" value="Mu"> Mushroom <br>
+    <input class="toppings" type="checkbox" name="topping" onchange="additions(this, '.25')" value="To"> Tomato <br>
+    <input class="toppings" type="checkbox" name="topping" onchange="additions(this, '.25')" value="Pi"> Pickles <br>
+    <input class="toppings" type="checkbox" name="topping" onchange="additions(this, '.25')" value="Oli"> Olives <br>
 </form><br>
 <br>
 
     <form action="">
  Unit Price:<br>
- <input type="text" name="price" value="">
+ <input type="text" name="UnitPrice" value="" id="Price">
  <br>
  # of Units:<br>
- <input type="text" name="units" value="">
+ <select id="Number" onchange="calcTotal()">
+  <option value="1" selected>1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+  <option value="6">6</option>
+</select>
  <br>
  Calories:<br>
  <input type="text" name="calories" value="">
@@ -47,12 +57,10 @@
 <button type="button" onclick="alert('Hello')">Insert Order</button>
 <button type="button" onclick="alert('Hello')">New Order</button>
 <button type="button" onclick="alert('Hello')">New Customer</button>
-<button type="button" onclick="alert('Hello')">Delete Order</button>
+<button type="button" onclick="alert('Hello')">Delete Order</button><br>
 <br>
-
-
-
 </form>
+
 <style>
 table {
   font-family: arial, sans-serif;
@@ -115,6 +123,51 @@ tr:nth-child(even) {
     <td></td>
   </tr>
 </table>
+
+<script language='JavaScript' type='text/javascript'>
+
+function additions(checkbox, additions) {
+ var up = document.getElementById("Price").value;
+ up = checkbox.checked ? parseFloat(up) + parseFloat(additions) : parseFloat(up) - parseFloat(additions);
+
+document.getElementById("Price").value = up
+
+}
+function calcTotal() {
+   var up = document.getElementById("Price");
+   var un = document.getElementById("Number");
+   var t = up.value * un.value;
+   document.getElementById("total").value = t;
+}
+calcTotal()
+function ChangePicture() {
+
+   if (document.querySelector('input[name="radio1"]:checked').value === "Ma") {
+       document.getElementById("pizzaPicture").src = "http://www.sugardale.com/sites/default/files/stuffed%20crust%20pizza.jpg";
+       document.getElementById("Price").value = "5";
+       document.getElementById("Calories").value = "350";
+       calcTotal()
+   } else if (document.querySelector('input[name="radio1"]:checked').value === "Mp") {
+       document.getElementById("pizzaPicture").src = "https://www.papajohns.com/static-assets/a/images/web/product/pizzas/sausage-slate-compressed.jpg";
+       document.getElementById("Price").value = "7";
+       document.getElementById("Calories").value = "765";
+       calcTotal()
+   } else if (document.querySelector('input[name="radio1"]:checked').value === "Sic") {
+       document.getElementById("pizzaPicture").src = "https://www.papajohns.com/static-assets/a/images/web/product/garlic-parm-crust/garlic-parm-sausage-compressed.jpg"
+       document.getElementById("Price").value = "11";
+       document.getElementById("Calories").value = "250";
+       calcTotal()
+
+   } else if (document.querySelector('input[name="radio1"]:checked').value === "Nap") {
+       document.getElementById("pizzaPicture").src = "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ1KqZEBJ3GBv_dhrapZgiQ0hdzL-_KNIhXJZXXzGJyMPpxN6Lc";
+       document.getElementById("Price").value = "4";
+       document.getElementById("Calories").value = "475";
+       calcTotal()
+
+}}
+
+
+</script>
 
 </body>
 </html>
