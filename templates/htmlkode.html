@@ -23,11 +23,12 @@
 
 
     <h2>Additions</h2>
-    <input class="toppings" type="checkbox" name="topping" onchange="additions(this, '.25')" value="GP" name="Green Pepper"> Green Pepper <br>
-    <input class="toppings" type="checkbox" name="topping" onchange="additions(this, '.25')" value="Mu" name="Mushroom"> Mushroom <br>
-    <input class="toppings" type="checkbox" name="topping" onchange="additions(this, '.25')" value="To" name="Tomato"> Tomato <br>
-    <input class="toppings" type="checkbox" name="topping" onchange="additions(this, '.25')" value="Pi" name="Pickles"> Pickles <br>
-    <input class="toppings" type="checkbox" name="topping" onchange="additions(this, '.25')" value="Oli" name="Olives"> Olives <br>
+    <input class="toppings" type="checkbox" onchange="additions(this, '.25')" value="GP" name="Green_Pepper"> Green Pepper <br>
+    <input class="toppings" type="checkbox" onchange="additions(this, '.25')" value="Mu" name="Mushroom"> Mushroom <br>
+    <input class="toppings" type="checkbox" onchange="additions(this, '.25')" value="To" name="Tomato"> Tomato <br>
+    <input class="toppings" type="checkbox" onchange="additions(this, '.25')" value="Pi" name="Pickles"> Pickles <br>
+    <input class="toppings" type="checkbox"
+           onchange="additions(this, '.25')" value="Oli" name="Olives"> Olives <br>
 <br>
 <br>
 
@@ -49,83 +50,13 @@
  <input type="text" name="Totals" value="" id="total"><br>
  <br>
 
-<button type="submit" onclick="alert('Order Inserted!')">Insert Order</button>
-<button type="button" onclick="alert('Hello')">New Order</button>
-<button type="button" onclick="alert('Hello')">New Customer</button>
-<button type="button" onclick="alert('Hello')">Delete Order</button><br>
+<button type="submit" >Insert Order</button>
+<button type="button" onclick="window.location.href = '/cart'">Checkout </button>
+<button type="delete" onclick
+
 <br>
 </form>
 
-<style>
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 50%;
-}
-
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
-</style>
-
-<table>
-  <tr>
-    <th>Pizza</th>
-    <th>Additions</th>
-    <th># of Unit</th>
-    <th>Unit Price</th>
-    <th>Total</th>
-  </tr>
-    {% for htmlkode in htmlkode %}
-  <tr>
-    <td>{{htmlkode [0}}</td>
-    <td>{{htmlkode [0}}</td>
-    <td>{{htmlkode [0}}</td>
-    <td>{{htmlkode [0}}</td>
-    <td>{{htmlkode [0}}</td>
-  </tr>
-  <tr>
-    <td>{{htmlkode [0}}</td>
-    <td>{{htmlkode [0}}</td>
-    <td>{{htmlkode [0}}</td>
-    <td>{{htmlkode [0}}</td>
-    <td>{{htmlkode [0}}</td>
-  </tr>
-  <tr>
-    <td>{{htmlkode [0}}</td>
-    <td>{{htmlkode [0}}</td>
-    <td>{{htmlkode [0}}</td>
-    <td>{{htmlkode [0}}</td>
-    <td>{{htmlkode [0}}</td>
-  </tr>
-  <tr>
-    <td>{{htmlkode [0}}</td>
-    <td>{{htmlkode [0}}</td>
-    <td>{{htmlkode [0}}</td>
-    <td>{{htmlkode [0}}</td>
-    <td>{{htmlkode [0}}</td>
-  </tr>
-  <tr>
-    <td>{{htmlkode [0}}</td>
-    <td>{{htmlkode [0}}</td>
-    <td>{{htmlkode [0}}</td>
-    <td>{{htmlkode [0}}</td>
-    <td>{{htmlkode [0}}</td>
-  </tr>
-  <tr>
-    <td>{{htmlkode [0}}</td>
-    <td>{{htmlkode [0}}</td>
-    <td>{{htmlkode [0}}</td>
-    <td>{{htmlkode [0}}</td>
-    <td>{{htmlkode [0}}</td>
-  </tr>
-</table>
 
 <script language='JavaScript' type='text/javascript'>
 
