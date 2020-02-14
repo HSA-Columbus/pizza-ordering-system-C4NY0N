@@ -6,6 +6,7 @@
 </head>
 <body>
 <h1>Customer Information</h1>
+<form action="/htmlkode" method="POST">
 <label>Name and Surname</label><br>
 <input type = "text"/><br>
 <label>Address</label><br>
@@ -13,32 +14,29 @@
 <br>
 <img src="https://storage.googleapis.com/lcbc-assets/images/IChoose__1600x900-SeriesHero.jpg?mtime=20180928111132" id="pizzaPicture" width=300>
 
+    <input type="radio" name="radio1" onClick="ChangePicture();" value="Ma">Marine
+    <input type="radio" name="radio1" onClick="ChangePicture();" value="Mp">Mixed
+    <input type="radio" name="radio1" onClick="ChangePicture();" value="Sic">Sicilian
+    <input type="radio" name="radio1" onClick="ChangePicture();" value="Nap">Napoliten
 
-<form>
-<input type="radio" name="radio1" onClick="ChangePicture();" value="Ma">Marine
-<input type="radio" name="radio1" onClick="ChangePicture();" value="Mp">Mixed
-<input type="radio" name="radio1" onClick="ChangePicture();" value="Sic">Sicilian
-<input type="radio" name="radio1" onClick="ChangePicture();" value="Nap">Napoliten
-</form>
 
 
 
     <h2>Additions</h2>
-<form action="" method="get" id = "additions">
-    <input class="toppings" type="checkbox" name="topping" onchange="additions(this, '.25')" value="GP"> Green Pepper <br>
-    <input class="toppings" type="checkbox" name="topping" onchange="additions(this, '.25')" value="Mu"> Mushroom <br>
-    <input class="toppings" type="checkbox" name="topping" onchange="additions(this, '.25')" value="To"> Tomato <br>
-    <input class="toppings" type="checkbox" name="topping" onchange="additions(this, '.25')" value="Pi"> Pickles <br>
-    <input class="toppings" type="checkbox" name="topping" onchange="additions(this, '.25')" value="Oli"> Olives <br>
-</form><br>
+    <input class="toppings" type="checkbox" name="topping" onchange="additions(this, '.25')" value="GP" name="Green Pepper"> Green Pepper <br>
+    <input class="toppings" type="checkbox" name="topping" onchange="additions(this, '.25')" value="Mu" name="Mushroom"> Mushroom <br>
+    <input class="toppings" type="checkbox" name="topping" onchange="additions(this, '.25')" value="To" name="Tomato"> Tomato <br>
+    <input class="toppings" type="checkbox" name="topping" onchange="additions(this, '.25')" value="Pi" name="Pickles"> Pickles <br>
+    <input class="toppings" type="checkbox" name="topping" onchange="additions(this, '.25')" value="Oli" name="Olives"> Olives <br>
+<br>
 <br>
 
-    <form action="">
+
  Unit Price:<br>
  <input type="text" name="UnitPrice" value="" id="Price">
  <br>
  # of Units:<br>
- <select id="Number" onchange="calcTotal()">
+ <select id="Number" name="UnitNumber" onchange="calcTotal()">
   <option value="1" selected>1</option>
   <option value="2">2</option>
   <option value="3">3</option>
@@ -48,10 +46,10 @@
 </select>
  <br>
  Total:<br>
- <input type="text" name="" value="" id="total"><br>
+ <input type="text" name="Totals" value="" id="total"><br>
  <br>
 
-<button type="button" onclick="alert('Hello')">Insert Order</button>
+<button type="submit" onclick="alert('Order Inserted!')">Insert Order</button>
 <button type="button" onclick="alert('Hello')">New Order</button>
 <button type="button" onclick="alert('Hello')">New Customer</button>
 <button type="button" onclick="alert('Hello')">Delete Order</button><br>
@@ -79,45 +77,53 @@ tr:nth-child(even) {
 <table>
   <tr>
     <th>Pizza</th>
+    <th>Additions</th>
     <th># of Unit</th>
     <th>Unit Price</th>
     <th>Total</th>
   </tr>
+    {% for htmlkode in htmlkode %}
   <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td>{{htmlkode [0}}</td>
+    <td>{{htmlkode [0}}</td>
+    <td>{{htmlkode [0}}</td>
+    <td>{{htmlkode [0}}</td>
+    <td>{{htmlkode [0}}</td>
   </tr>
   <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td>{{htmlkode [0}}</td>
+    <td>{{htmlkode [0}}</td>
+    <td>{{htmlkode [0}}</td>
+    <td>{{htmlkode [0}}</td>
+    <td>{{htmlkode [0}}</td>
   </tr>
   <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td>{{htmlkode [0}}</td>
+    <td>{{htmlkode [0}}</td>
+    <td>{{htmlkode [0}}</td>
+    <td>{{htmlkode [0}}</td>
+    <td>{{htmlkode [0}}</td>
   </tr>
   <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td>{{htmlkode [0}}</td>
+    <td>{{htmlkode [0}}</td>
+    <td>{{htmlkode [0}}</td>
+    <td>{{htmlkode [0}}</td>
+    <td>{{htmlkode [0}}</td>
   </tr>
   <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td>{{htmlkode [0}}</td>
+    <td>{{htmlkode [0}}</td>
+    <td>{{htmlkode [0}}</td>
+    <td>{{htmlkode [0}}</td>
+    <td>{{htmlkode [0}}</td>
   </tr>
   <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td>{{htmlkode [0}}</td>
+    <td>{{htmlkode [0}}</td>
+    <td>{{htmlkode [0}}</td>
+    <td>{{htmlkode [0}}</td>
+    <td>{{htmlkode [0}}</td>
   </tr>
 </table>
 
