@@ -3,6 +3,9 @@ from Database import Data
 
 application = Flask(__name__, static_url_path='/static')
 
+@application.errorhandler(404)
+def error404(error):
+    return '<h1>This page does not exist! GO BAAAAAAACK! GET TO THE CHOPPA!'
 
 @application.route("/cart")
 def cart():
